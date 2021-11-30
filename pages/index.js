@@ -33,7 +33,8 @@ export default function Home({personal_data, software}) {
 
   return (
     <>
-        <Head>        
+    <p>Ola k ase</p>
+        {/* <Head>        
             <link rel="stylesheet" href="css/icomoon.css" /> 
         </Head>
         <div style={{display: 'flex', justifyContent: 'right'}}>
@@ -81,13 +82,6 @@ export default function Home({personal_data, software}) {
                                 title={soft.fields.nombre}>
                               </div>
                           </motion.li>
-                          {/* <li key={index} className="list-inline-item cursor-pointer">
-                              <div 
-                                className="dev-icon" 
-                                style={{backgroundImage: `url(${soft.fields.url_icono})`}} 
-                                title={soft.fields.nombre}>
-                              </div>
-                          </li> */}
                         </Link>
                       )
                     }))
@@ -96,7 +90,7 @@ export default function Home({personal_data, software}) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
     </>
   )
 }
