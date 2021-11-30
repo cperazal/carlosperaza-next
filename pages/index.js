@@ -4,36 +4,36 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
-  const client = createClient({
-    space: process.env.CONTENTFUL_ID_SPACE,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-  })
+//   const client = createClient({
+//     space: process.env.CONTENTFUL_ID_SPACE,
+//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+//   })
 
-  const response = await client.getEntries({
-    content_type: 'personal_information'
-  })
+//   const response = await client.getEntries({
+//     content_type: 'personal_information'
+//   })
 
-  const response2 = await client.getEntries({
-    content_type: 'software'
-  })
+//   const response2 = await client.getEntries({
+//     content_type: 'software'
+//   })
 
 
-  return {
-    props: {
-      personal_data: response.items,
-      software: response2.items
-    }, 
-    revalidate: 10,
-  }
-}
+//   return {
+//     props: {
+//       personal_data: response.items,
+//       software: response2.items
+//     }, 
+//     revalidate: 10,
+//   }
+// }
 
 export default function Home({personal_data, software}) {
 
   return (
     <>
-    <p>Ola k ase</p>
+    <p>ola k mira</p>
         {/* <Head>        
             <link rel="stylesheet" href="css/icomoon.css" /> 
         </Head>
