@@ -2,7 +2,7 @@ import Head from 'next/head'
 import {createClient} from 'contentful'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Layout from '../components/layout/Layout';
+
 
 export async function getStaticProps() {
 
@@ -36,7 +36,6 @@ export default function Home({personal_data, software}) {
         <Head>        
             <link rel="stylesheet" href="css/icomoon.css" /> 
         </Head>
-        <Layout>
         <div style={{display: 'flex', justifyContent: 'right'}}>
           <ul className="ftco-social mt-3">
               <motion.li  whileHover={{scale: 1.7,transition: {duration: .2}}}>
@@ -91,7 +90,6 @@ export default function Home({personal_data, software}) {
             </div>
           </div>
         </div>
-        </Layout>
     </>
   )
 }
