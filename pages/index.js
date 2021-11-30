@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 
   const client = createClient({
     space: process.env.CONTENTFUL_ID_SPACE,
@@ -25,6 +25,7 @@ export async function getStaticProps(context) {
       personal_data: response.items,
       software: response2.items
     }, 
+    revalidate: 10,
   }
 }
 

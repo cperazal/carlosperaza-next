@@ -1,7 +1,7 @@
 import {createClient} from 'contentful'
 import EducationItem from "../components/education/EducationItem";
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 
     const client = createClient({
       space: process.env.CONTENTFUL_ID_SPACE,
@@ -16,6 +16,7 @@ export async function getStaticProps(context) {
       props: {
         education: response.items
       }, 
+      revalidate: 10,
     }
   }
 

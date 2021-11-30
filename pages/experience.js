@@ -2,7 +2,7 @@ import {createClient} from 'contentful'
 import ExperienceItem from "../components/experience/ExperienceItem";
 
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 
     const client = createClient({
       space: process.env.CONTENTFUL_ID_SPACE,
@@ -17,6 +17,7 @@ export async function getStaticProps(context) {
       props: {
         experiencia: response.items
       }, 
+      revalidate: 10,
     }
   }
 

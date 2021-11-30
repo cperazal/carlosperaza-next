@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 
     const client = createClient({
       space: process.env.CONTENTFUL_ID_SPACE,
@@ -18,6 +18,7 @@ export async function getStaticProps(context) {
       props: {
         personal_data: response.items
       }, 
+      revalidate: 10,
     }
   }
 
