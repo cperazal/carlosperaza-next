@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Script from 'next/script'
 import { useEffect } from 'react';
+import $ from 'jquery';
 
 const Layout = props => {
 
@@ -39,9 +39,6 @@ const Layout = props => {
 
     return ( 
         <>
-            <Script src="js/jquery.min.js" strategy="beforeInteractive" /> 
-            <Script src="js/jquery-migrate-3.0.1.min.js" />
-            <Script src="js/bootstrap.min.js" />
             <Head>
                 <title>{process.env.NEXT_PUBLIC_PAGE_TITLE}</title>
                 <link rel="icon" href="/favicon.ico" />
