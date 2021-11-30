@@ -82,7 +82,6 @@ const Contact = ({personal_data}) => {
         <>
             <ToastContainer autoClose={3000} />
             <Head>        
-                <link rel="stylesheet" href="css/animate.css" />              
                 <link rel="stylesheet" href="css/icomoon.css" />              
             </Head>
             <section className="ftco-section contact-section">

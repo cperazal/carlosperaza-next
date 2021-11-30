@@ -58,7 +58,9 @@ const Layout = props => {
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" />
-                <link rel="stylesheet" href="css/style.css" />
+                {/* <link rel="stylesheet" href="css/style.css" /> */}
+                <link rel="preload" href="css/style.css" as="style" onLoad="this.onload=null;this.rel='stylesheet'" />
+                <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
             </Head>  
 
             <span onClick={() => onClickBurger()} className="js-colorlib-nav-toggle colorlib-nav-toggle" id="btnBurger"><i></i></span>

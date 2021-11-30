@@ -34,7 +34,6 @@ export default function Home({personal_data, software}) {
   return (
     <>
         <Head>        
-            <link rel="stylesheet" href="css/animate.css" />              
             <link rel="stylesheet" href="css/icomoon.css" /> 
         </Head>
         <div style={{display: 'flex', justifyContent: 'right'}}>
