@@ -6,10 +6,25 @@ import { useEffect } from 'react';
 const Layout = props => {
 
     useEffect(() => {
+        $(document).click(function (e) {
+            var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+        
+                if ( $('body').hasClass('offcanvas') ) {
+        
+                    $('body').removeClass('offcanvas');
+                    $('.js-colorlib-nav-toggle').removeClass('active');
+                
+                }
+                
+            }
+        });
+
         if ($('body').hasClass('offcanvas')) {
             document.querySelector("#btnBurger").classList.remove("active");
             $('body').removeClass('offcanvas');	
         }
+
     })
     
     const onClickBurger = () => {
@@ -27,7 +42,6 @@ const Layout = props => {
             <Script src="js/jquery.min.js" strategy="beforeInteractive" /> 
             <Script src="js/jquery-migrate-3.0.1.min.js" />
             <Script src="js/bootstrap.min.js" />
-            <Script src="js/main.js" />
             <Head>
                 <title>{process.env.NEXT_PUBLIC_PAGE_TITLE}</title>
                 <link rel="icon" href="/favicon.ico" />
