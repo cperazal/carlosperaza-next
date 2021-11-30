@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps, router }) {
     <>
       <Layout>
         
-          <motion.div initial="pageInitial" key={router.route} animate="pageAnimate" transition={{ delay: 0.2 }} 
+          {/* <motion.div initial="pageInitial" key={router.route} animate="pageAnimate" transition={{ delay: 0.2 }} 
             variants={{
               pageInitial: {
                 opacity: 0,
@@ -15,11 +15,11 @@ function MyApp({ Component, pageProps, router }) {
               pageAnimate: {
                 opacity: 1
               },}}
-            >
+            > */}
 
                 <Component {...pageProps} />
 
-          </motion.div>
+          {/* </motion.div> */}
         
       </Layout>
     </>
