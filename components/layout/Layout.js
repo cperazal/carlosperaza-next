@@ -62,7 +62,7 @@ const Layout = props => {
             </Head>  
 
             {/* <span onClick={() => onClickBurger()} className="js-colorlib-nav-toggle colorlib-nav-toggle" id="btnBurger"><i></i></span> */}
-            <aside id="colorlib-aside" role="complementary" className="js-fullheight text-center">
+            {/* <aside id="colorlib-aside" role="complementary" className="js-fullheight text-center">
             <Link href="/"><h1 id="colorlib-logo" className="cursor-pointer">Carlos</h1></Link>              
                 <nav id="colorlib-main-menu" role="navigation">
                     <ul>
@@ -90,7 +90,7 @@ const Layout = props => {
                     Copyright &copy;{new Date().getFullYear()}
                     
                 </div>
-            </aside>
+            </aside> */}
 
             <div id="colorlib-main">
                 <main>
