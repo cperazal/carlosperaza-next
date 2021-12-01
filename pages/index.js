@@ -58,7 +58,7 @@ export default function Home({personal_data, software}) {
             <div className="col-md-8 text text-center">
               <div className="img mb-4" style={{backgroundImage: `url(${personal_data[0].fields.foto.fields.file.url})`}} ></div>
               <div className="desc">
-                <h2 className="subheading">Hola, mi nombre es</h2>
+                <h2 className="subheading"><b>Hola, mi nombre es</b></h2>
                 <h1 className="mb-4 text-secondary">{personal_data[0].fields.nombre}</h1>
                 <p className="mb-4">{personal_data[0].fields.descripcion}</p>
                 
