@@ -39,7 +39,7 @@ const Layout = props => {
 
     return ( 
         <>
-            <Head>
+            {/* <Head>
                 <title>{process.env.NEXT_PUBLIC_PAGE_TITLE}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="robots" content= "index, follow"/>	
@@ -59,7 +59,7 @@ const Layout = props => {
                 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" />
                 <link rel="stylesheet" href="css/style.css" />
-            </Head>  
+            </Head>   */}
 
             {/* <span onClick={() => onClickBurger()} className="js-colorlib-nav-toggle colorlib-nav-toggle" id="btnBurger"><i></i></span> */}
             {/* <aside id="colorlib-aside" role="complementary" className="js-fullheight text-center">
