@@ -31,8 +31,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  /* --font-family-sans-serif: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+  /* --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  */
+}
 
 *,
 *::before,
@@ -41,7 +42,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -56,7 +57,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -161,7 +162,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  /* font-family: monospace, monospace; */
   font-size: 1em; }
 
 pre {
@@ -4494,7 +4495,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4579,7 +4580,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7268,7 +7269,7 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #dee2e6 !important; } }
 
 body {
-  font-family: "Montserrat", Arial, sans-serif;
+  /* font-family: "Montserrat", Arial, sans-serif; */
   background: #fff;
   font-size: 15px;
   line-height: 1.8;
@@ -7309,7 +7310,8 @@ h1, h2, h3, h4, h5,
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
-  font-family: "Poppins", Arial, sans-serif; }
+  /* font-family: "Poppins", Arial, sans-serif;  */
+}
 
 #colorlib-page {
   width: 100%;
@@ -7376,7 +7378,7 @@ h1, h2, h3, h4, h5,
         text-decoration: none;
         position: relative;
         padding: 10px 0;
-        font-family: "Montserrat", Arial, sans-serif;
+        /* font-family: "Montserrat", Arial, sans-serif; */
         -moz-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         -webkit-transition: all 0.3s ease;
