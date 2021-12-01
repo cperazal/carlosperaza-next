@@ -57,8 +57,8 @@ const Layout = props => {
                 <meta name="msapplication-tooltip" content="Hola, mi nombre es Carlos Peraza soy ingeniero en informatica y desarrollador de software." />       
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
                 {/* <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" />
-                <link rel="stylesheet" href="css/style.css" /> */}
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet" /> */}
+                <link rel="stylesheet" href="css/style.css" />
             </Head>  
 
             <span onClick={() => onClickBurger()} className="js-colorlib-nav-toggle colorlib-nav-toggle" id="btnBurger"><i></i></span>
