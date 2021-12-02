@@ -57,7 +57,7 @@ const Layout = props => {
                 <meta name="msapplication-tooltip" content="Hola, mi nombre es Carlos Peraza soy ingeniero en informatica y desarrollador de software." />       
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
                 <link rel="stylesheet" href="css/style.css" />
             </Head>  
