@@ -1,4 +1,5 @@
-#Portafolio Next js
+# Personal Web Next js
+
 Aplicación web sencilla para mostrar portafolio y resumen curricular.
 
 #### Tecnologías
