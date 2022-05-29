@@ -28,7 +28,7 @@ const Education = ({software}) => {
             </Head>
             <section className="ftco-section">
                 <div className="container">
-                    <h2 align="center">Skills</h2>
+                    <h2 align="center">Tecnologías</h2>
                     <div className="row pt-4">
                         <div className="col-12">
                                 {

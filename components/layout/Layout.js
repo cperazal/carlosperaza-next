@@ -68,7 +68,7 @@ const Layout = props => {
                 <nav id="colorlib-main-menu" role="navigation">
                     <ul>
                         <li className={(props.children.key==="/" ? "colorlib-active": "")}><Link href="/">Home</Link></li>
-                        <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">Habilidades</Link></li>
+                        <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">Tecnologías</Link></li>
                         <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/experience">Experiencia</Link></li>
                         <li className={(props.children.key==="/projects" ? "colorlib-active": "")}><Link href="/projects">Proyectos</Link></li>
                         <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">Educación</Link></li>
