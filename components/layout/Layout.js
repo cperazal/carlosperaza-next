@@ -70,7 +70,8 @@ const Layout = props => {
                         <li className={(props.children.key==="/" ? "colorlib-active": "")}><Link href="/">Home</Link></li>
                         <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">Habilidades</Link></li>
                         <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/experience">Experiencia</Link></li>
-                        <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">Educacion</Link></li>
+                        <li className={(props.children.key==="/projects" ? "colorlib-active": "")}><Link href="/projects">Proyectos</Link></li>
+                        <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">Educación</Link></li>
                         <li className={(props.children.key==="/rewards" ? "colorlib-active": "")}><Link href="/rewards">Reconocimientos</Link></li>
                         <li className={(props.children.key==="/contact" ? "colorlib-active": "")}><Link href="/contact">Contacto</Link></li>
                     </ul>
