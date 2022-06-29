@@ -48,9 +48,9 @@ const Layout = props => {
                 <meta name="theme-color" content="#000619" />
                 <meta name="msapplication-navbutton-color" content="#000619" />
                 <meta name="msapplication-window" content="width=1024;height=768" />
-                <meta property="og:title" content="carlosperaza.me" />
+                <meta property="og:title" content="carlosperaza.dev" />
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="carlosperaza.me" />
+                <meta property="og:site_name" content="carlosperaza.dev" />
                 <meta name="description" content="Hola, mi nombre es Carlos Peraza soy ingeniero en informatica y desarrollador de software." />
                 <meta property="og:image" itemProp="image" content="https://images.ctfassets.net/gwysva35bpgz/6C7UgbGLtPjyWMkteSBOKU/e291da6083ea2670ac04327c3848a901/perfil.jpg" />
                 <meta property="og:description" content="Hola, mi nombre es Carlos Peraza soy ingeniero en informatica y desarrollador de software." />

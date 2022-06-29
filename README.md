@@ -20,5 +20,5 @@ Una vez creadas las cuentas y configuradas se deben obtener las credenciales y f
 	CONTENTFUL_ACCESS_TOKEN= my_contentful_access_token
 	SENDGRID_API_KEY= my_sendgrid_api_key
 
-Pueden ver este proyecto en funcionamiento [aqui](https://www.carlosperaza.me "aqui")
+Pueden ver este proyecto en funcionamiento [aqui](https://www.carlosperaza.dev "aqui")
 
