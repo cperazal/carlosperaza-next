@@ -8,8 +8,8 @@ import ContextApp from '../context';
 export async function getStaticProps() {
 
     const client = createClient({
-      space: process.env.CONTENTFUL_ID_SPACE,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
     })
   
     const response = await client.getEntries({
