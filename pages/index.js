@@ -2,13 +2,14 @@ import Head from 'next/head'
 import {createClient} from 'contentful'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
+import { useContext, useEffect, useState } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
   const client = createClient({
-    space: process.env.CONTENTFUL_ID_SPACE,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
   })
 
   const response = await client.getEntries({
@@ -22,14 +23,40 @@ export async function getStaticProps() {
 
   return {
     props: {
-      personal_data: response.items,
+      personal_data_c: response.items,
       software: response2.items
     }, 
     revalidate: 10,
   }
 }
 
-export default function Home({personal_data, software}) {
+export default function Home({personal_data_c, software}) {
+
+  const {locale} = useContext(ContextApp);
+  const [personal_data, setPersonalData] = useState(personal_data_c)
+
+  useEffect(() => {
+    if(locale){
+      getPersonalData();
+    }
+  }, [locale]);
+
+
+  const getPersonalData = async () => {
+
+    const client = createClient({
+      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+    });
+
+    const response = await client.getEntries({
+      content_type: 'personal_information', locale: locale
+    });
+
+    setPersonalData(response.items);
+
+  }
+
 
   return (
     <>
@@ -58,7 +85,7 @@ export default function Home({personal_data, software}) {
             <div className="col-md-8 text text-center">
               <div className="img mb-4" style={{backgroundImage: `url(${personal_data[0].fields.foto.fields.file.url})`}} ></div>
               <div className="desc">
-                <h2 className="subheading"><b>Hola, mi nombre es</b></h2>
+                <h2 className="subheading"><b>{(locale === 'es-419') ? 'Hola, mi nombre es': 'Hi, my name is'}</b></h2>
                 <h1 className="mb-4 text-secondary">{personal_data[0].fields.nombre}</h1>
                 <p className="mb-4">{personal_data[0].fields.descripcion}</p>
                 

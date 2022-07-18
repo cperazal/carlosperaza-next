@@ -2,8 +2,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import $ from 'jquery';
+import { useContext } from 'react';
+import ContextApp from '../../context';
 
 const Layout = props => {
+
+    const {locale, setLanguage} = useContext(ContextApp);
 
     useEffect(() => {
         $(document).click(function (e) {
@@ -24,8 +28,7 @@ const Layout = props => {
             document.querySelector("#btnBurger").classList.remove("active");
             $('body').removeClass('offcanvas');	
         }
-
-    })
+    }, [locale])
     
     const onClickBurger = () => {
         if ($('body').hasClass('offcanvas')) {
@@ -35,6 +38,10 @@ const Layout = props => {
             document.querySelector("#btnBurger").classList.add("active");
             $('body').addClass('offcanvas');	
         }
+    }
+
+    const onClickLanguage = (lang) => {
+        setLanguage(lang);
     }
 
     return ( 
@@ -61,18 +68,27 @@ const Layout = props => {
                 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
                 <link rel="stylesheet" href="css/style.css" />
             </Head>  
-
             <span onClick={() => onClickBurger()} className="js-colorlib-nav-toggle colorlib-nav-toggle" id="btnBurger"><i></i></span>
             <aside id="colorlib-aside" role="complementary" className="js-fullheight text-center">
-            <Link href="/"><h1 id="colorlib-logo" className="cursor-pointer">Carlos</h1></Link>              
+            <Link href="/"><h1 id="colorlib-logo" className="cursor-pointer">Carlos</h1></Link> 
+            <br/>
                 <nav id="colorlib-main-menu" role="navigation">
+                    <div className='div-languages cursor-pointer'>
+                        {
+                            (locale === 'es-419') ? (
+                                <div className='img-english' title='Select english language' onClick={() => onClickLanguage("en-US")}></div>
+                            ):(
+                                <div className='img-spanish' title='Select spanish language' onClick={() => onClickLanguage("es-419")}></div>
+                            )
+                        }
+                    </div>
                     <ul>
                         <li className={(props.children.key==="/" ? "colorlib-active": "")}><Link href="/">Home</Link></li>
-                        <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">Habilidades</Link></li>
-                        <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/experience">Experiencia</Link></li>
-                        <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">Educacion</Link></li>
-                        <li className={(props.children.key==="/rewards" ? "colorlib-active": "")}><Link href="/rewards">Reconocimientos</Link></li>
-                        <li className={(props.children.key==="/contact" ? "colorlib-active": "")}><Link href="/contact">Contacto</Link></li>
+                        <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">{(locale === 'es-419') ? 'Habilidades': 'Skills'}</Link></li>
+                        <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/experience">{(locale === 'es-419') ? 'Experiencia': 'Experience'}</Link></li>
+                        <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">{(locale === 'es-419') ? 'Educación': 'Education'}</Link></li>
+                        <li className={(props.children.key==="/rewards" ? "colorlib-active": "")}><Link href="/rewards">{(locale === 'es-419') ? 'Reconocimientos': 'Rewards'}</Link></li>
+                        <li className={(props.children.key==="/contact" ? "colorlib-active": "")}><Link href="/contact">{(locale === 'es-419') ? 'Contacto': 'Contact'}</Link></li>
                     </ul>
                 </nav>
 
@@ -92,7 +108,6 @@ const Layout = props => {
                     
                 </div>
             </aside>
-
             <div id="colorlib-main">
                 <main>
                     {props.children}

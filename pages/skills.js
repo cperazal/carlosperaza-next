@@ -1,5 +1,7 @@
 import {createClient} from 'contentful'
 import Head from 'next/head';
+import { useContext, useEffect, useState } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
@@ -21,6 +23,9 @@ export async function getStaticProps() {
   }
 
 const Education = ({software}) => {
+
+    const {locale} = useContext(ContextApp);
+
     return ( 
         <>
             <Head>
@@ -28,7 +33,7 @@ const Education = ({software}) => {
             </Head>
             <section className="ftco-section">
                 <div className="container">
-                    <h2 align="center">Skills</h2>
+                    <h2 align="center">{(locale === 'es-419') ? 'Habilidades': 'Skills'}</h2>
                     <div className="row pt-4">
                         <div className="col-12">
                                 {
