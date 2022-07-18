@@ -1,6 +1,6 @@
 import {createClient} from 'contentful'
 import Head from 'next/head';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import ContextApp from '../context';
 
 export async function getStaticProps() {

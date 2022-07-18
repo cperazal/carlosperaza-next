@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './reward.module.css';
-import Link from 'next/link';
 
 const RewardsItem = ({reward}) => {
     return ( 
