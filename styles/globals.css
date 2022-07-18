@@ -23,20 +23,21 @@ p {
   margin-top: -68%;
   margin-left: -12%;
   position: absolute;
+  box-shadow: 5px 6px 5px grey;
 }
 
 .img-spanish{
   background-image: url('../public/images/spanish.png');
   background-repeat: no-repeat;
   width: 24px;
-  height: 24px;
+  height: 20px;
 }
 
 .img-english{
   background-image: url('../public/images/english.png');
   background-repeat: no-repeat;
   width: 24px;
-  height: 24px;
+  height: 20px;
 }
 
 @media only screen and (max-width: 768px) {
