@@ -1,5 +1,7 @@
 import {createClient} from 'contentful'
-import ProjectItem from '../components/projects/ProjectItem'
+import ProjectItem from '../components/projects/ProjectItem';
+import { useContext, useEffect, useState } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
@@ -14,13 +16,36 @@ export async function getStaticProps() {
   
     return {
       props: {
-        projects: response.items
+        projects_c: response.items
       }, 
       revalidate: 10,
     }
   }
 
-const Experience = ({projects}) => {
+const Experience = ({projects_c}) => {
+
+    const {locale} = useContext(ContextApp);
+    const [projects, setProjects] = useState(projects_c);
+
+    useEffect(() => {
+        if(locale){
+            getProjects();
+        }
+      }, [locale]);
+
+    const getProjects = async () => {
+        const client = createClient({
+            space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+            accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+            })
+        
+        const response = await client.getEntries({
+            content_type: 'proyectos', locale: locale
+        })
+
+        setProjects(response.items);
+    }
+
     return ( 
         <>
             <section className="ftco-section">
@@ -34,6 +59,7 @@ const Experience = ({projects}) => {
                                             <ProjectItem 
                                                 key={index}
                                                 project={proj}
+                                                locale={locale}
                                             />
                                         ))
                                     ):(

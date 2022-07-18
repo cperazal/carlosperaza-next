@@ -20,7 +20,7 @@ p {
 }
 
 .div-languages{
-  margin-top: -68%;
+  margin-top: -46%;
   margin-left: -12%;
   position: absolute;
   box-shadow: 5px 6px 5px grey;
@@ -40,10 +40,17 @@ p {
   height: 20px;
 }
 
+.ul-menu{
+  margin-top: -25% !important;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="div-languages"] {
     margin-top: -45%;
     margin-left: -14%;
+  }
+  [class*="ul-menu"] {
+    margin-top: 0% !important;
   }
 }
