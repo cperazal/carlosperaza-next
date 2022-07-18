@@ -82,6 +82,7 @@ const Layout = props => {
                             )
                         }
                     </div>
+                    
                     <ul>
                         <li className={(props.children.key==="/" ? "colorlib-active": "")}><Link href="/">Home</Link></li>
                         <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">{(locale === 'es-419') ? 'Habilidades': 'Skills'}</Link></li>
