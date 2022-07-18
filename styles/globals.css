@@ -18,3 +18,31 @@ a {
 p {
   font-family: 'Roboto', sans-serif;
 }
+
+.div-languages{
+  margin-top: -68%;
+  margin-left: -12%;
+  position: absolute;
+}
+
+.img-spanish{
+  background-image: url('../public/images/spanish.png');
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.img-english{
+  background-image: url('../public/images/english.png');
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="div-languages"] {
+    margin-top: -45%;
+    margin-left: -14%;
+  }
+}

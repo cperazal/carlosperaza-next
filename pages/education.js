@@ -1,11 +1,13 @@
 import {createClient} from 'contentful'
 import EducationItem from "../components/education/EducationItem";
+import { useContext, useEffect, useState } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
     const client = createClient({
-      space: process.env.CONTENTFUL_ID_SPACE,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
     })
   
     const response = await client.getEntries({
@@ -14,13 +16,37 @@ export async function getStaticProps() {
   
     return {
       props: {
-        education: response.items
+        education_c: response.items
       }, 
       revalidate: 10,
     }
   }
 
-const Education = ({education}) => {
+const Education = ({education_c}) => {
+
+    const {locale} = useContext(ContextApp);
+    const [education, setEducation] = useState(education_c);
+    
+    useEffect(() => {
+        if(locale){
+            getEducation();
+        }
+      }, [locale]);
+
+    const getEducation = async () => {
+        const client = createClient({
+            space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+            accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+          });
+    
+        const response = await client.getEntries({
+            content_type: 'educacion', locale: locale
+        });
+
+        setEducation(response.items);
+
+    }
+
     return ( 
         <>
             <section className="ftco-section">

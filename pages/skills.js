@@ -1,11 +1,13 @@
 import {createClient} from 'contentful'
 import Head from 'next/head';
+import { useContext, useEffect, useState } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
     const client = createClient({
-      space: process.env.CONTENTFUL_ID_SPACE,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
     })
   
     const response = await client.getEntries({
@@ -21,6 +23,9 @@ export async function getStaticProps() {
   }
 
 const Education = ({software}) => {
+
+    const {locale} = useContext(ContextApp);
+
     return ( 
         <>
             <Head>
@@ -28,7 +33,7 @@ const Education = ({software}) => {
             </Head>
             <section className="ftco-section">
                 <div className="container">
-                    <h2 align="center">Tecnologías</h2>
+                    <h2 align="center">{(locale === 'es-419') ? 'Habilidades': 'Skills'}</h2>
                     <div className="row pt-4">
                         <div className="col-12">
                                 {

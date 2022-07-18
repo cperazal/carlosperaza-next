@@ -2,12 +2,14 @@ import {createClient} from 'contentful'
 import Head from 'next/head';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext, useEffect, useRef } from 'react';
+import ContextApp from '../context';
 
 export async function getStaticProps() {
 
     const client = createClient({
-      space: process.env.CONTENTFUL_ID_SPACE,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
+      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
     })
   
     const response = await client.getEntries({
@@ -23,6 +25,12 @@ export async function getStaticProps() {
   }
 
 const Contact = ({personal_data}) => {
+
+    const {locale} = useContext(ContextApp);
+    const formContactRef = useRef();
+
+    useEffect(() => {
+      }, [locale]);
 
     const handleSubmit = async (event) => {
 
@@ -50,7 +58,8 @@ const Contact = ({personal_data}) => {
             {
               pending: 'Enviando...',
               success: {
-                  render({data}){                      
+                  render({data}){     
+                    formContactRef.current.reset(); 
                     return 'El correo ha sido enviado';
                   },
               },
@@ -88,40 +97,40 @@ const Contact = ({personal_data}) => {
                 <div className="container">
                     <div className="row d-flex mb-5 contact-info">
                     <div className="col-md-12">
-                        <h2 className="h4 font-weight-bold">Información de contacto</h2>
+                        <h2 className="h4 font-weight-bold">{(locale === 'es-419') ? 'Información de contacto': 'Contact'}</h2>
                     </div>
                     <div className="w-100"></div>
                     
                     </div>
                     <div className="row block-9">
                         <div className="col-md-6 order-md-last pr-md-5">
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} ref={formContactRef}>
                                 <div className="form-group">
-                                    <input type="text" id="name" name="name" className="form-control" placeholder="Tu nombre" />
+                                    <input type="text" id="name" name="name" className="form-control" placeholder={(locale === 'es-419') ? 'Tu nombre': 'Your name'} />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" id="email" name="email" className="form-control" placeholder="Tu email" />
+                                    <input type="text" id="email" name="email" className="form-control" placeholder={(locale === 'es-419') ? 'Tu email': 'Your email'} />
                                 </div>
                                 <div className="form-group">
-                                    <input type="text" id="subject" name="subject" className="form-control" placeholder="Asunto" />
+                                    <input type="text" id="subject" name="subject" className="form-control" placeholder={(locale === 'es-419') ? 'Asunto': 'Subject'} />
                                 </div>
                                 <div className="form-group">
-                                    <textarea id="message"  name="message" cols="30" rows="7" className="form-control" placeholder="Mensaje"></textarea>
+                                    <textarea id="message"  name="message" cols="30" rows="7" className="form-control" placeholder={(locale === 'es-419') ? 'Mensaje': 'Message'}></textarea>
                                 </div>
                                 <div className="form-group">
-                                    <input type="submit" value="Enviar mensaje" className="btn btn-primary py-3 px-5" />
+                                    <input type="submit" value={(locale === 'es-419') ? 'Enviar': 'Send'} className="btn btn-primary py-3 px-5" />
                                 </div>
                             </form>
                         </div>
                         <div className="col-md-6">
                             <div>
-                                <p><span className="text-secondary">Dirección:</span> {personal_data[0].fields.ubicacion}</p>
+                                <p><span className="text-secondary">{(locale === 'es-419') ? 'Dirección:': 'Address:'}</span> {personal_data[0].fields.ubicacion}</p>
                             </div>
                             <div className="pt-2">
-                                <p><span className="text-secondary">Teléfono:</span> <a href="tel://1234567920"> {personal_data[0].fields.telefono}</a></p>
+                                <p><span className="text-secondary">{(locale === 'es-419') ? 'Teléfono:': 'Phone:'}</span> <a href="tel://1234567920"> {personal_data[0].fields.telefono}</a></p>
                             </div>
                             <div className="pt-2">
-                                <p><span className="text-secondary">Email:</span> <a href={`mailto:${personal_data[0].fields.correo}`}>{personal_data[0].fields.correo}</a></p>
+                                <p><span className="text-secondary">{(locale === 'es-419') ? 'Correo:': 'Email:'}</span> <a href={`mailto:${personal_data[0].fields.correo}`}>{personal_data[0].fields.correo}</a></p>
                             </div>
                             <div className="pt-2">
                                 <p><span className="text-secondary">Web: </span> <a href={personal_data[0].fields.web} target="_blank" rel="noreferrer">{personal_data[0].fields.web}</a></p>
