@@ -1,7 +1,7 @@
 import styles from './projects.module.css';
 import Image from 'next/image';
 
-const ProjectItem = ({project}) => {
+const ProjectItem = ({project, locale}) => {
     return ( 
         <div className="col-md-12">
             {
@@ -39,7 +39,7 @@ const ProjectItem = ({project}) => {
                     
                     <p className="mt-4">{project.fields.descripcion}</p>
                     <div>
-                        <h5 className="text-secondary">Tecnologías</h5>
+                        <h5 className="text-secondary">{(locale === 'es-419') ? 'Tecnologías': 'Technologies'}</h5>
                         <ul>
                         {
                             project.fields.tecnologias.map((tec, index) => (
