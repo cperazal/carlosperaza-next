@@ -30,7 +30,6 @@ const Contact = ({personal_data}) => {
     const formContactRef = useRef();
 
     useEffect(() => {
-        console.log(personal_data[0].fields.telefono)
       }, [locale]);
 
     const handleSubmit = async (event) => {
