@@ -79,7 +79,8 @@ export default function Home({personal_data_c, software}) {
               </motion.li>
           </ul>
         </div>
-        <div className="hero-wrap js-fullheight mt-4" style={{backgroundImage: "url(images/bg_1.jpg)"}} data-stellar-background-ratio="0.5">
+        <div className="hero-wrap js-fullheight mt-4"  data-stellar-background-ratio="0.5">
+          {/* style={{backgroundImage: "url(images/bg_1.jpg)"}} */}
           <div className="overlay"></div>
           <div className="js-fullheight d-flex justify-content-center align-items-center">
             <div className="col-md-8 text text-center">

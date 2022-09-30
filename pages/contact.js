@@ -126,9 +126,16 @@ const Contact = ({personal_data}) => {
                             <div>
                                 <p><span className="text-secondary">{(locale === 'es-419') ? 'Dirección:': 'Address:'}</span> {personal_data[0].fields.ubicacion}</p>
                             </div>
-                            <div className="pt-2">
-                                <p><span className="text-secondary">{(locale === 'es-419') ? 'Teléfono:': 'Phone:'}</span> <a href="tel://1234567920"> {personal_data[0].fields.telefono}</a></p>
-                            </div>
+                            {
+                                (personal_data[0].fields.telefono) ? (
+                                    <div className="pt-2">
+                                        <p><span className="text-secondary">{(locale === 'es-419') ? 'Teléfono:': 'Phone:'}</span> <a href={`tel://${personal_data[0].fields.telefono}`}> {personal_data[0].fields.telefono}</a></p>
+                                    </div>
+                                ):(
+                                    null
+                                )
+                            }
+                            
                             <div className="pt-2">
                                 <p><span className="text-secondary">{(locale === 'es-419') ? 'Correo:': 'Email:'}</span> <a href={`mailto:${personal_data[0].fields.correo}`}>{personal_data[0].fields.correo}</a></p>
                             </div>
