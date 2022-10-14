@@ -30,6 +30,7 @@ const Education = ({software}) => {
         <>
             <Head>
                 <link rel="stylesheet" href="css/skills.css" />  
+                <title>Skills | {process.env.NEXT_PUBLIC_PAGE_TITLE}</title>        
             </Head>
             <section className="ftco-section">
                 <div className="container">

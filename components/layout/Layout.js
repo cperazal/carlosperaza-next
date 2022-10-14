@@ -86,7 +86,7 @@ const Layout = props => {
                         <li className={(props.children.key==="/" ? "colorlib-active": "")}><Link href="/">Home</Link></li>
                         <li className={(props.children.key==="/skills" ? "colorlib-active": "")}><Link href="/skills">{(locale === 'es-419') ? 'Habilidades': 'Skills'}</Link></li>
                         <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/experience">{(locale === 'es-419') ? 'Experiencia': 'Experience'}</Link></li>
-                        <li className={(props.children.key==="/experience" ? "colorlib-active": "")}><Link href="/projects">{(locale === 'es-419') ? 'Proyectos': 'Projects'}</Link></li>
+                        <li className={(props.children.key==="/projects" ? "colorlib-active": "")}><Link href="/projects">{(locale === 'es-419') ? 'Proyectos': 'Projects'}</Link></li>
                         <li className={(props.children.key==="/education" ? "colorlib-active": "")}><Link href="/education">{(locale === 'es-419') ? 'Educación': 'Education'}</Link></li>
                         <li className={(props.children.key==="/rewards" ? "colorlib-active": "")}><Link href="/rewards">{(locale === 'es-419') ? 'Reconocimientos': 'Rewards'}</Link></li>
                         <li className={(props.children.key==="/contact" ? "colorlib-active": "")}><Link href="/contact">{(locale === 'es-419') ? 'Contacto': 'Contact'}</Link></li>

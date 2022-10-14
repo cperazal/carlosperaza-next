@@ -91,7 +91,8 @@ const Contact = ({personal_data}) => {
         <>
             <ToastContainer autoClose={3000} />
             <Head>        
-                <link rel="stylesheet" href="css/icomoon.css" />              
+                <link rel="stylesheet" href="css/icomoon.css" />      
+                <title>Contact | {process.env.NEXT_PUBLIC_PAGE_TITLE}</title>        
             </Head>
             <section className="ftco-section contact-section">
                 <div className="container">
