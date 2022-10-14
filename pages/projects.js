@@ -2,6 +2,7 @@ import {createClient} from 'contentful'
 import ProjectItem from '../components/projects/ProjectItem';
 import { useContext, useEffect, useState } from 'react';
 import ContextApp from '../context';
+import Head from 'next/head';
 
 export async function getStaticProps() {
 
@@ -48,6 +49,9 @@ const Experience = ({projects_c}) => {
 
     return ( 
         <>
+            <Head>        
+                <title>Projects | {process.env.NEXT_PUBLIC_PAGE_TITLE}</title>        
+            </Head>
             <section className="ftco-section">
                 <div className="container">
                     <div className="row">

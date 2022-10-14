@@ -2,6 +2,7 @@ import {createClient} from 'contentful'
 import RewardsItem from "../components/rewards/RewardsItem";
 import { useContext, useEffect, useState } from 'react';
 import ContextApp from '../context';
+import Head from 'next/head';
 
 export async function getStaticProps() {
 
@@ -50,6 +51,9 @@ const Experience = ({rewards_c}) => {
 
     return ( 
         <>
+            <Head>        
+                <title>Rewards | {process.env.NEXT_PUBLIC_PAGE_TITLE}</title>        
+            </Head>
             <section className="ftco-section">
                 <div className="container">
                     <div className="row">
