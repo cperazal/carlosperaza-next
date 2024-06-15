@@ -1,12 +1,27 @@
 import sgMail from '@sendgrid/mail'
+const rateLimit = require("express-rate-limit");
+// implement rate limiting for the contact form
+// Create a new express app
+const express = require("express");
+const app = express();
+// Use the express app as middleware
+app.use(express.json());
+// Define the rate limit
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 5 // limit each IP to 5 requests per windowMs
+});
+// Apply the rate limit to your route
+app.use("/api/contact", limiter);
 
-sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
+// Your existing code...
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async (req, res) => {
   const { email, subject, message, name } = req.body
   const msg = {
-    to: process.env.NEXT_PUBLIC_EMAIL_TO,
-    from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+    to: process.env.EMAIL_TO,
+    from: process.env.EMAIL_FROM,
     subject: subject,
     name: name,
     // text: message + ', ' + email,

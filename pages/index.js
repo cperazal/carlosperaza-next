@@ -8,8 +8,8 @@ import ContextApp from '../context';
 export async function getStaticProps() {
 
   const client = createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+    space: process.env.CONTENTFUL_ID_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
   })
 
   const response = await client.getEntries({
@@ -45,8 +45,8 @@ export default function Home({personal_data_c, software}) {
   const getPersonalData = async () => {
 
     const client = createClient({
-      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
-      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+      space: process.env.CONTENTFUL_ID_SPACE,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     });
 
     const response = await client.getEntries({

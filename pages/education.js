@@ -7,8 +7,8 @@ import Head from 'next/head';
 export async function getStaticProps() {
 
     const client = createClient({
-      space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
-      accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+      space: process.env.CONTENTFUL_ID_SPACE,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     })
   
     const response = await client.getEntries({
@@ -36,8 +36,8 @@ const Education = ({education_c}) => {
 
     const getEducation = async () => {
         const client = createClient({
-            space: process.env.NEXT_PUBLIC_CONTENTFUL_ID_SPACE,
-            accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+            space: process.env.CONTENTFUL_ID_SPACE,
+            accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
           });
     
         const response = await client.getEntries({
